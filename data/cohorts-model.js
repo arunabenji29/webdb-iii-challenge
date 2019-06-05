@@ -24,7 +24,7 @@ function findById(id){
 
 function add(cohort){
     return db('cohorts')
-    .insert(zoo,'id')
+    .insert(cohort,'id')
 }
 
 function update(id,changes){

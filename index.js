@@ -12,7 +12,7 @@ server.use(helmet());
 
 server.use(express.json());
 
-server.get('/cohorts',CohortRouter)
+server.use('/api/cohorts',CohortRouter)
 
 
 
