@@ -34,6 +34,24 @@ router.get('/:id', (req,res) => {
     )
 })
 
+router.get('/:id/students', (req,res) => {
+    Cohorts.getStudents(req.params.id)
+    .then(cohort => {
+        if(cohort)
+        {
+            res.status(200).json(cohort);
+        }
+        else {
+            res.status(404).json({message:'zoo id not found'});
+        }
+    })
+    .catch(error => {
+        res.status(500).json(error);
+    }
+
+    )
+})
+
 router.post('/', (req,res) => {
     Cohorts
     .add(req.body)

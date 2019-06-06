@@ -17,7 +17,7 @@ router.get('/', (req,res) => {
 })
 
 router.get('/:id', (req,res) => {
-    Students.findById(req.params.id)
+    Students.getAStudent(req.params.id)
     .then(student => {
         if(student)
         {

@@ -8,7 +8,8 @@ module.exports = {
     findById,
     add,
     update,
-    remove
+    remove,
+    getStudents
 };
 
 function find(){
@@ -20,6 +21,15 @@ function findById(id){
     return db('cohorts')
     .where({id})
     .first();
+}
+
+function getStudents(id){
+    // return db.select('students.id','students.name')
+    // .from('students')
+    // .innerJoin('cohorts',{'students.cohort_id':'cohorts.id'})
+    return db('students')
+    .where({'cohort_id':id})
+
 }
 
 function add(cohort){
